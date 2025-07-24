@@ -1,6 +1,7 @@
 import Menu from "./components/Menu/Menu";
 
 type props = {
+  id: number
   image: string
   title: string
   price: number
@@ -25,7 +26,7 @@ export default async function Home() {
 
       <div className="grid grid-cols-3 gap-4 ml-8 mt-8 shadow">
        {dados.map((items,index) => (
-            <div className="w-90 h-95 bg-white rounded flex flex-col items-center">
+            <div key={items.id} className="w-90 h-95 bg-white rounded flex flex-col items-center">
               <img className="h-35 w-35 mt-3 mb-3" src={items.image} alt="" />
 
               <div className="w-full h-full px-6 grid">
